@@ -52,7 +52,9 @@ export default function SigninForm() {
 
             toast.success("Login successful");
             navigate("/dashboard");
-        } catch (error: any) {
+        }
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        catch (error: any) {
             console.log('Login error: ', error);
             if (error?.data?.message != '') {
                 toast.error(error.data.message);

@@ -40,12 +40,16 @@ export default function SignupForm() {
 
     const handleSignup = async (values: SignupFormValues) => {
         try {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { confirmPassword, ...payload } = values;
 
             await signup(payload).unwrap();
             toast.success("Signup successful. Please login.");
-            navigate("/login");
-        } catch (error: any) {
+            navigate("/auth/login");
+
+        }
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        catch (error: any) {
             console.log('Form submission error: ', error);
             if (error?.data?.message != '') {
                 toast.error(error.data.message);

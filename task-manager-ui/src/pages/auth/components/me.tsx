@@ -18,8 +18,8 @@ export default function Me() {
     }
 
     if (error) {
-        toast.error((error as any)?.data?.message);
-        return <div className="text-center mt-10 text-red-500">Failed to load user</div>;
+        toast.error(error?.data?.message);
+        navigate("/auth/login");
     }
 
     const handleLogout = async () => {
@@ -27,7 +27,9 @@ export default function Me() {
             dispatch(logout());
             toast.success('Logged out successfully');
             navigate('/auth/login', { replace: true });
-        } catch (err: any) {
+        }
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any 
+        catch (err: any) {
             toast.error(err?.data?.message || 'Logout failed');
         }
     };

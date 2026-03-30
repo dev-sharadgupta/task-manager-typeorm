@@ -48,7 +48,6 @@ export const me = async (req: any, res: Response) => {
     try {
         const userRepo = AppDataSource.getRepository(User);
 
-        console.log('req.userId: ', req.userId);
         const user = await userRepo.findOne({
             where: { id: req.userId },
             select: ["id", "username", "email", "created_at"]
