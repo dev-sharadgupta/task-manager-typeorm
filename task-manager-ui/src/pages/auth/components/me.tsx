@@ -18,7 +18,8 @@ export default function Me() {
     }
 
     if (error) {
-        toast.error(error?.data?.message);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any 
+        toast.error((error as any)?.data?.message);
         navigate("/auth/login");
     }
 
