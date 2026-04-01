@@ -1,5 +1,7 @@
 # 🗂️ Task Manager App (Full Stack)
 
+![Node.js](https://img.shields.io/badge/Node.js-18-green)
+
 A full-stack **Task Management Application** built with modern technologies:
 
 * ⚛️ **Frontend**: React 19 + TypeScript + Vite + Tailwind + Redux Toolkit
